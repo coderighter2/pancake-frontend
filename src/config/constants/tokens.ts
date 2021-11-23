@@ -1733,12 +1733,13 @@ export const mainnetTokens = {
     'Mines of Dalarnia',
     'https://www.minesofdalarnia.com/',
   ),
+  msc: new Token(TESTNET, '0xb3ae8E5bccebD6F7002C3bF1D5713477B16f8791', 18, 'MSC', 'MyShitCoin', ''),
 }
 
 export const testnetTokens = {
   wbnb: new Token(
     TESTNET,
-    '0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F',
+    '0xf9a7A2b01Bf758776703677719F8aCf018600070',
     18,
     'WBNB',
     'Wrapped BNB',
@@ -1746,7 +1747,7 @@ export const testnetTokens = {
   ),
   cake: new Token(
     TESTNET,
-    '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
+    '0xAFc75b6dE6139c86918E453F6d8E74D2cCc9432C',
     18,
     'CAKE',
     'PancakeSwap Token',
@@ -1754,7 +1755,7 @@ export const testnetTokens = {
   ),
   busd: new Token(
     TESTNET,
-    '0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee',
+    '0x2aFD1d7DADEfb7fE31364A4f57f704c1558C8Edc',
     18,
     'BUSD',
     'Binance USD',
@@ -1762,7 +1763,7 @@ export const testnetTokens = {
   ),
   syrup: new Token(
     TESTNET,
-    '0xfE1e507CeB712BDe086f3579d2c03248b2dB77f9',
+    '0xB63F26A2B4D8ECED46CeD722E90e0347Feef6919',
     18,
     'SYRUP',
     'SyrupBar Token',
@@ -1776,6 +1777,7 @@ export const testnetTokens = {
     'Bakeryswap Token',
     'https://www.bakeryswap.org/',
   ),
+  msc: new Token(TESTNET, '0xb3ae8E5bccebD6F7002C3bF1D5713477B16f8791', 18, 'MSC', 'MyShitCoin', ''),
 }
 
 const tokens = (): TokenList => {

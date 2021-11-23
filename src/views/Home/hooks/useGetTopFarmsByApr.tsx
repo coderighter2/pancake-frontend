@@ -56,7 +56,7 @@ const useGetTopFarmsByApr = (isIntersecting: boolean) => {
           farm.poolWeight,
           cakePriceBusd,
           totalLiquidity,
-          farm.lpAddresses[ChainId.MAINNET],
+          farm.lpAddresses[parseInt(process.env.REACT_APP_CHAIN_ID, 10)],
         )
         return { ...farm, apr: cakeRewardsApr, lpRewardsApr }
       })
