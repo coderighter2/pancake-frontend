@@ -9,49 +9,39 @@ const farms: SerializedFarmConfig[] = [
    */
   {
     pid: 0,
-    lpSymbol: 'CAKE',
+    lpSymbol: 'BUSD-SPY',
     lpAddresses: {
-      97: '0xAFc75b6dE6139c86918E453F6d8E74D2cCc9432C',
+      97: '0xa38F8964F9d9Ad4266494cDD8a5da8e58335f76a',
       56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
     },
-    token: serializedTokens.syrup,
-    quoteToken: serializedTokens.wbnb,
+    token: serializedTokens.spy,
+    quoteToken: serializedTokens.busd,
   },
   {
     pid: 1,
-    lpSymbol: 'CAKE-BNB LP',
+    lpSymbol: 'SPY-BNB LP',
     lpAddresses: {
-      97: '0xd91c491f90015aBFC07CA2468Ff3fa682D3E5284',
+      97: '0x42fc257C0fD445a504097Fa7fDE11DA4d3550639',
       56: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0',
     },
-    token: serializedTokens.cake,
+    token: serializedTokens.spy,
     quoteToken: serializedTokens.wbnb,
   },
   {
     pid: 2,
-    lpSymbol: 'BUSD-CAKE LP',
+    lpSymbol: 'SPY-MSC LP',
     lpAddresses: {
-      97: '0x4876D2fAd480b1d3D01C0C443B5CFbf667e56292',
-      56: '',
-    },
-    token: serializedTokens.cake,
-    quoteToken: serializedTokens.busd,
-  },
-  {
-    pid: 3,
-    lpSymbol: 'CAKE-MSC LP',
-    lpAddresses: {
-      97: '0x957425459b8b900E6011157068A4C7BaCBD8Bb6a',
+      97: '0xE322332287766B7f3a9ADfD7f4642F05eb668De8',
       56: '',
     },
     token: serializedTokens.msc,
-    quoteToken: serializedTokens.cake,
+    quoteToken: serializedTokens.spy,
   },
   {
-    pid: 4,
+    pid: 3,
     lpSymbol: 'BUSD-BNB LP',
     lpAddresses: {
-      97: '',
+      97: '0x7e22Bb130a3Fd9080bdEd79eb107d6716dCD1D3f',
       56: '0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16',
     },
     token: serializedTokens.busd,

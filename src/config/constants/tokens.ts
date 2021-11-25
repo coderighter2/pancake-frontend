@@ -1733,7 +1733,7 @@ export const mainnetTokens = {
     'Mines of Dalarnia',
     'https://www.minesofdalarnia.com/',
   ),
-  msc: new Token(TESTNET, '0xb3ae8E5bccebD6F7002C3bF1D5713477B16f8791', 18, 'MSC', 'MyShitCoin', ''),
+  spy: new Token(TESTNET, '0x12C6f5dEcaAda351D39E911E8f71e8e99F6D71D9', 0, 'SPY', 'SPY Token', 'https://spy.io/'),
 }
 
 export const testnetTokens = {
@@ -1747,11 +1747,19 @@ export const testnetTokens = {
   ),
   cake: new Token(
     TESTNET,
-    '0xAFc75b6dE6139c86918E453F6d8E74D2cCc9432C',
-    18,
-    'CAKE',
+    '0x12C6f5dEcaAda351D39E911E8f71e8e99F6D71D9',
+    0,
+    'SPY',
     'PancakeSwap Token',
     'https://pancakeswap.finance/',
+  ),
+  spy: new Token(
+    TESTNET,
+    '0x12C6f5dEcaAda351D39E911E8f71e8e99F6D71D9',
+    0,
+    'SPY',
+    'SmartyPay Token',
+    'https://smartypay.io',
   ),
   busd: new Token(
     TESTNET,
@@ -1761,23 +1769,6 @@ export const testnetTokens = {
     'Binance USD',
     'https://www.paxos.com/busd/',
   ),
-  syrup: new Token(
-    TESTNET,
-    '0xB63F26A2B4D8ECED46CeD722E90e0347Feef6919',
-    18,
-    'SYRUP',
-    'SyrupBar Token',
-    'https://pancakeswap.finance/',
-  ),
-  bake: new Token(
-    TESTNET,
-    '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
-    18,
-    'BAKE',
-    'Bakeryswap Token',
-    'https://www.bakeryswap.org/',
-  ),
-  msc: new Token(TESTNET, '0xb3ae8E5bccebD6F7002C3bF1D5713477B16f8791', 18, 'MSC', 'MyShitCoin', ''),
 }
 
 const tokens = (): TokenList => {
