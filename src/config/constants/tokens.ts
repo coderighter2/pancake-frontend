@@ -1733,7 +1733,7 @@ export const mainnetTokens = {
     'Mines of Dalarnia',
     'https://www.minesofdalarnia.com/',
   ),
-  spy: new Token(TESTNET, '0x12C6f5dEcaAda351D39E911E8f71e8e99F6D71D9', 0, 'SPY', 'SPY Token', 'https://spy.io/'),
+  spy: new Token(TESTNET, '0x6F25144001Ce324E745c3FF25a646A292883feD5', 0, 'SPY', 'SPY Token', 'https://spy.io/'),
   msc: new Token(TESTNET, '0xb3ae8E5bccebD6F7002C3bF1D5713477B16f8791', 18, 'MSC', 'MyShitCoin', ''),
 }
 
@@ -1748,7 +1748,7 @@ export const testnetTokens = {
   ),
   cake: new Token(
     TESTNET,
-    '0x12C6f5dEcaAda351D39E911E8f71e8e99F6D71D9',
+    '0x6F25144001Ce324E745c3FF25a646A292883feD5',
     0,
     'SPY',
     'PancakeSwap Token',
@@ -1756,7 +1756,7 @@ export const testnetTokens = {
   ),
   spy: new Token(
     TESTNET,
-    '0x12C6f5dEcaAda351D39E911E8f71e8e99F6D71D9',
+    '0x6F25144001Ce324E745c3FF25a646A292883feD5',
     0,
     'SPY',
     'SmartyPay Token',
