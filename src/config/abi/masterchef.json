@@ -2,23 +2,13 @@
   {
     "inputs": [
       {
-        "internalType": "contract CakeToken",
-        "name": "_cake",
-        "type": "address"
-      },
-      {
-        "internalType": "contract SyrupBar",
-        "name": "_syrup",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_devaddr",
+        "internalType": "contract SpyToken",
+        "name": "_spy",
         "type": "address"
       },
       {
         "internalType": "uint256",
-        "name": "_cakePerBlock",
+        "name": "_spyPerBlock",
         "type": "uint256"
       },
       {
@@ -110,6 +100,56 @@
       },
       {
         "indexed": true,
+        "internalType": "address",
+        "name": "referrer",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "commissionAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "ReferralCommissionPaid",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "pid",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amountLockedUp",
+        "type": "uint256"
+      }
+    ],
+    "name": "RewardLockedUp",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
         "internalType": "uint256",
         "name": "pid",
         "type": "uint256"
@@ -132,6 +172,32 @@
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "MAXIMUM_HARVEST_INTERVAL",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "MAXIMUM_REFERRAL_COMMISSION_RATE",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
       }
     ],
     "stateMutability": "view",
@@ -161,26 +227,24 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "cake",
-    "outputs": [
+    "inputs": [
       {
-        "internalType": "contract CakeToken",
-        "name": "",
+        "internalType": "uint256",
+        "name": "_pid",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_user",
         "type": "address"
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "cakePerBlock",
+    "name": "canHarvest",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "bool",
         "name": "",
-        "type": "uint256"
+        "type": "bool"
       }
     ],
     "stateMutability": "view",
@@ -197,37 +261,16 @@
         "internalType": "uint256",
         "name": "_amount",
         "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_referrer",
+        "type": "address"
       }
     ],
     "name": "deposit",
     "outputs": [],
     "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_devaddr",
-        "type": "address"
-      }
-    ],
-    "name": "dev",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "devaddr",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -244,16 +287,16 @@
     "type": "function"
   },
   {
-    "inputs": [
+    "inputs": [],
+    "name": "getMiningOwner",
+    "outputs": [
       {
-        "internalType": "uint256",
-        "name": "_amount",
-        "type": "uint256"
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
-    "name": "enterStaking",
-    "outputs": [],
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -281,16 +324,29 @@
     "type": "function"
   },
   {
-    "inputs": [
+    "inputs": [],
+    "name": "harvestInterval",
+    "outputs": [
       {
         "internalType": "uint256",
-        "name": "_amount",
+        "name": "",
         "type": "uint256"
       }
     ],
-    "name": "leaveStaking",
-    "outputs": [],
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "marketingPool",
+    "outputs": [
+      {
+        "internalType": "contract SpyPool",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -328,6 +384,19 @@
   },
   {
     "inputs": [],
+    "name": "miningPool",
+    "outputs": [
+      {
+        "internalType": "contract SpyPool",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "owner",
     "outputs": [
       {
@@ -352,7 +421,7 @@
         "type": "address"
       }
     ],
-    "name": "pendingCake",
+    "name": "pendingSpy",
     "outputs": [
       {
         "internalType": "uint256",
@@ -390,7 +459,12 @@
       },
       {
         "internalType": "uint256",
-        "name": "accCakePerShare",
+        "name": "accSpyPerShare",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "harvestInterval",
         "type": "uint256"
       }
     ],
@@ -405,6 +479,19 @@
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "referralCommissionRate",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
       }
     ],
     "stateMutability": "view",
@@ -443,6 +530,47 @@
   {
     "inputs": [
       {
+        "internalType": "uint256",
+        "name": "_pid",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_allocPoint",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_harvestInterval",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "_withUpdate",
+        "type": "bool"
+      }
+    ],
+    "name": "set2",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_harvestInterval",
+        "type": "uint256"
+      }
+    ],
+    "name": "setHarvestInterval",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "contract IMigratorChef",
         "name": "_migrator",
         "type": "address"
@@ -451,6 +579,71 @@
     "name": "setMigrator",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "_referralCommissionRate",
+        "type": "uint16"
+      }
+    ],
+    "name": "setReferralCommissionRate",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "contract ISpyReferral",
+        "name": "_spyReferral",
+        "type": "address"
+      }
+    ],
+    "name": "setSpyReferral",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "spy",
+    "outputs": [
+      {
+        "internalType": "contract SpyToken",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "spyPerBlock",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "spyReferral",
+    "outputs": [
+      {
+        "internalType": "contract ISpyReferral",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -468,12 +661,12 @@
   },
   {
     "inputs": [],
-    "name": "syrup",
+    "name": "totalAllocPoint",
     "outputs": [
       {
-        "internalType": "contract SyrupBar",
+        "internalType": "uint256",
         "name": "",
-        "type": "address"
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -481,7 +674,7 @@
   },
   {
     "inputs": [],
-    "name": "totalAllocPoint",
+    "name": "totalLockedUpRewards",
     "outputs": [
       {
         "internalType": "uint256",
@@ -555,6 +748,16 @@
         "internalType": "uint256",
         "name": "rewardDebt",
         "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "rewardLockedUp",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "nextHarvestUntil",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -574,6 +777,42 @@
       }
     ],
     "name": "withdraw",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_to",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "withdrawMarketingPool",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_to",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "withdrawMiningPool",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

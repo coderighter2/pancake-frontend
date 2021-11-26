@@ -1734,6 +1734,7 @@ export const mainnetTokens = {
     'https://www.minesofdalarnia.com/',
   ),
   spy: new Token(TESTNET, '0x12C6f5dEcaAda351D39E911E8f71e8e99F6D71D9', 0, 'SPY', 'SPY Token', 'https://spy.io/'),
+  msc: new Token(TESTNET, '0xb3ae8E5bccebD6F7002C3bF1D5713477B16f8791', 18, 'MSC', 'MyShitCoin', ''),
 }
 
 export const testnetTokens = {
@@ -1769,6 +1770,7 @@ export const testnetTokens = {
     'Binance USD',
     'https://www.paxos.com/busd/',
   ),
+  msc: new Token(TESTNET, '0xb3ae8E5bccebD6F7002C3bF1D5713477B16f8791', 18, 'MSC', 'MyShitCoin', ''),
 }
 
 const tokens = (): TokenList => {
